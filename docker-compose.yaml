@@ -1,0 +1,20 @@
+
+services:
+  syncjob-rechnung:
+    image: fherlingatpd/fherling-syncpod:latest
+    restart: unless-stopped
+    volumes:
+      - /volume1/scanned_documents/rechnung:/origin
+      - /volume1/docker/paperless/incoming:/destination/rechnung
+  syncjob-versicherung:
+    image: fherlingatpd/fherling-syncpod:latest
+    restart: unless-stopped
+    volumes:
+      - /volume1/scanned_documents/versicherung:/origin
+      - /volume1/docker/paperless/incoming:/destination/versicherung
+  syncjob-wohnen:
+    image: fherlingatpd/fherling-syncpod:latest
+    restart: unless-stopped
+    volumes:
+      - /volume1/scanned_documents/wohnen:/origin
+      - /volume1/docker/paperless/incoming:/destination/wohnen      
