@@ -13,10 +13,10 @@ while read -r new_file; do
     base_name=$(basename "$new_file")
 
     # Get the current date in the format MMDDYY
-    current_date=$(date +%m%d%y)
+    current_date=$(date +%y%m%d)
 
     # Construct the new filename
-    new_filename="$current_date_$base_name"
+    new_filename="${current_date}_${base_name}"
 
     # Copy the file to the destination directory
     cp -v "$new_file" "$dest_dir/$new_filename"

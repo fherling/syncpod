@@ -13,7 +13,7 @@ RUN apk update && apk add inotify-tools shadow
 
 # Create a new user and group
 RUN echo "Creating usergroup $USER_GROUP with GID $USER_GID and user $USERNAME with UID $USER_UID" 
-RUN groupadd --gid $USER_GID $USER_GROUP \
+RUN groupadd -f --gid $USER_GID $USER_GROUP\
     && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME
 
 # Copy the scripts
@@ -28,4 +28,4 @@ USER $USERNAME
 
 WORKDIR /shellscripts
 
-#ENTRYPOINT [ "/scripts/copy-files.sh" ]
+ENTRYPOINT [ "/bin/sh", "/shellscripts/copy-files.sh" ]
