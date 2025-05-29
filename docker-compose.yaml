@@ -1,21 +1,21 @@
 
 services:
   syncjob-rechnung:
-    image: fherlingatpd/fherling-syncpod:latest
+    image: ghcr.io/fherling/syncpod:latest
     platform: linux/amd64
     restart: unless-stopped
     volumes:
       - /volume1/scanned_documents/rechnung:/origin:ro
       - /volume1/docker/paperless/incoming:/destination:rw
   syncjob-versicherung:
-    image: fherlingatpd/fherling-syncpod:latest
+    image: ghcr.io/fherling/syncpod:latest
     platform: linux/amd64
     restart: unless-stopped
     volumes:
       - /volume1/scanned_documents/versicherung:/origin:ro
       - /volume1/docker/paperless/incoming:/destination:rw
   syncjob-wohnen:
-    image: fherlingatpd/fherling-syncpod:latest
+    image: ghcr.io/fherling/syncpod:latest
     platform: linux/amd64
     restart: unless-stopped
     volumes:

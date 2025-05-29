@@ -1,0 +1,8 @@
+.git
+.github
+.gitignore
+destination
+origin
+*.md
+local-build.sh
+runitDocker.sh

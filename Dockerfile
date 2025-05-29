@@ -1,5 +1,4 @@
-ARG ARCH=
-FROM ${ARCH}alpine:latest
+FROM alpine:latest
 
 ARG USERNAME=paperles
 ARG USER_GROUP=paperles
